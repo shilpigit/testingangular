@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ const MainRoutes: Routes = [
     HometestComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(MainRoutes)
+    BrowserModule, RouterModule.forRoot(MainRoutes), HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

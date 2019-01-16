@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from './test.service';
+import {TestServiceService} from '../test-service.service'
+import { resolve } from 'url';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,15 @@ import { TestService } from './test.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _TestService: TestService) {
+  public commentList: any;
+  constructor( private _testComment: TestServiceService) {
   }
 
   ngOnInit() {
-    
+   this._testComment.getComments().subscribe(data=>
+    {
+      this.commentList = data
+    }); 
   }
 
 }
