@@ -1,33 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HometestComponent } from './hometest/hometest.component';
+import {RouteModule } from './route/route.module'
+import {AppComponent} from './app.component';
 
-const MainRoutes: Routes = [
-  {
-    path: "", component: HomeComponent
-  },
-  {
-    path: "test", component: HometestComponent
-  }
-]
+
+// const MainRoutes: Routes = [
+//   {
+//     path: "", component: HomeComponent
+//   },
+//   {
+//     path: "test", component: HometestComponent
+//   }
+// ]
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    HometestComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(MainRoutes), HttpClientModule
+    BrowserModule, HttpClientModule,RouteModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap:[AppComponent]
 })
 export class AppModule { }
